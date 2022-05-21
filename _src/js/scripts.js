@@ -13,8 +13,24 @@ function removeClass(el, className) {
 }
 
 function toggleMenu() {
-	const appMenu = document.querySelector('.slideout-panel');
+	var appMenu = document.querySelector('.slideout-panel');
 	hasClass(appMenu, 'open') ? removeClass(appMenu, 'open') : addClass(appMenu, 'open');
+	toggleOverlay();
+}
+
+function toggleOverlay() {
+	var overlay = document.querySelector('.modal-overlay');
+	var body = document.querySelector('body');
+	
+	if (overlay) {
+		body.removeChild(overlay);
+	} else {
+		overlay = document.createElement('div');
+		addClass(overlay, 'modal-overlay');
+		body.appendChild(overlay);
+		overlay.addEventListener('click', toggleMenu);
+		setTimeout(function(){ addClass(overlay, 'show') }, 0);
+	}
 }
 
 function refresh() {
