@@ -1,0 +1,22 @@
+{
+  "name": "platform",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "browser-sync start --server '_src' --files '_src'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mikemcphillips/platform.git"
+  },
+  "author": "",
+  "license": "none",
+  "bugs": {
+    "url": "https://github.com/mikemcphillips/platform/issues"
+  },
+  "homepage": "https://github.com/mikemcphillips/platform#readme",
+  "devDependencies": {
+    "browser-sync": "^2.27.10"
+  }
+}
