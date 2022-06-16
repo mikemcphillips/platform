@@ -45,6 +45,18 @@ function init() {
 	platformBtn.addEventListener('click', toggleMenu);
 	closeBtn.addEventListener('click', toggleMenu);
 	refreshBtn.addEventListener('click', refresh);
+	
+	var compList = document.querySelectorAll('.btn-app');
+	for (let i = 0; i < compList.length; i++) {
+		compList[i].addEventListener('click', (e) => {
+			for (let j = 0; j < compList.length; j++) {
+				removeClass(compList[j], 'current-selection');
+			}
+			let btn = (e.target.tagName === 'BUTTON') ? e.target : e.target.parentNode;
+			addClass(btn, 'current-selection');
+		});
+	}
+	
 }
 
 
